@@ -270,6 +270,16 @@ section{padding-block:76px;position:relative}
 .flip img{position:absolute;inset:0;width:100%;height:100%;border-radius:10px;backface-visibility:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45)}
 .flip .fb{transform:rotateY(180deg)}
 .flip:focus-visible{outline:2px solid var(--hivis);outline-offset:4px;border-radius:10px}
+.resdoc{width:100%;max-width:880px;margin:0 auto}
+.rbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-bottom:12px;font-family:var(--mono);font-size:12px;color:#cfd8e3}
+.rbar span{margin-right:auto}
+.rbar a{font-family:var(--display);font-weight:700;font-size:13px;text-decoration:none;color:#fff;background:var(--accent-btn);padding:8px 12px;border-radius:5px}
+.rbar a:hover{filter:brightness(1.1)}
+.rwrap{position:relative}
+.rwrap img{width:100%;display:block;border-radius:4px;background:#fff}
+.lb .rwrap img{max-height:none;max-width:100%}
+.hot{position:absolute;display:block;border-radius:3px;transition:background .2s,box-shadow .2s}
+.hot:hover,.hot:focus-visible{background:rgba(228,87,27,.14);box-shadow:0 0 0 1.5px var(--accent)}
 /* lightbox */
 .lb{position:fixed;inset:0;background:rgba(5,12,22,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-left,0px));animation:fade .25s both}
 .lb.open{display:flex}
@@ -785,6 +795,14 @@ footer{padding-block:28px 46px;font-family:var(--mono);font-size:12.5px;color:va
   <button class="p" id="lbp" aria-label="Previous">‹</button>
   <button class="n" id="lbn" aria-label="Next">›</button>
   <img id="lbimg" alt="">
+  <div id="resdoc" class="resdoc" hidden>
+    <div class="rbar"><span>Resume · Muhammad Afan Tahir</span><a href="resume.pdf" target="_blank" rel="noopener">Open PDF ↗</a><a href="https://www.linkedin.com/in/afantahir" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://afantahir.github.io" target="_blank" rel="noopener">Website ↗</a></div>
+    <div class="rwrap"><img id="resimg" alt="Resume of Muhammad Afan Tahir">
+      <a class="hot" style="left:25.3%;top:5.6%;width:18.2%;height:1.9%" href="mailto:afantahir.work@gmail.com" aria-label="Email afantahir.work@gmail.com"></a>
+      <a class="hot" style="left:55.7%;top:5.6%;width:17.1%;height:1.9%" href="https://www.linkedin.com/in/afantahir" target="_blank" rel="noopener" aria-label="LinkedIn profile"></a>
+      <a class="hot" style="left:74.3%;top:5.6%;width:12.4%;height:1.9%" href="https://afantahir.github.io" target="_blank" rel="noopener" aria-label="Portfolio website"></a>
+    </div>
+  </div>
   <div class="lcap" id="lbcap"></div>
 </div>
 
@@ -841,8 +859,8 @@ $$('.count').forEach(el=>co.observe(el));
 (function(){const lb=$('#lb'),img=$('#lbimg'),cap=$('#lbcap');let list=[],i=0;
   function open(items,k){list=items;i=k;render();lb.classList.add('open');document.body.style.overflow='hidden'}
   function render(){const it=list[i];img.src=it.src;img.alt=it.alt;cap.textContent=it.cap;$('#lbp').style.display=$('#lbn').style.display=list.length<2?'none':''}
-  function close(){lb.classList.remove('open','doc');document.body.style.overflow=''}
-  $$('.resume-open').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();lb.classList.add('doc');open([{src:$('#resumeimg').getAttribute('src'),alt:'Resume of Muhammad Afan Tahir',cap:'Resume · Oct 2026'}],0)}));
+  function close(){lb.classList.remove('open','doc');$('#resdoc').hidden=true;img.style.display='';document.body.style.overflow=''}
+  $$('.resume-open').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const r=$('#resimg');if(!r.getAttribute('src'))r.src=$('#resumeimg').getAttribute('src');$('#resdoc').hidden=false;img.style.display='none';cap.textContent='';$('#lbp').style.display=$('#lbn').style.display='none';lb.classList.add('doc','open');document.body.style.overflow='hidden';lb.scrollTop=0}));
   $('#lbx').addEventListener('click',close);lb.addEventListener('click',e=>{if(e.target===lb)close()});
   $('#lbp').addEventListener('click',()=>{i=(i-1+list.length)%list.length;render()});$('#lbn').addEventListener('click',()=>{i=(i+1)%list.length;render()});
   addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')$('#lbp').click();if(e.key==='ArrowRight')$('#lbn').click()});
