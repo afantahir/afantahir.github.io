@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Afan Tahir Portfolio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Muhammad Afan Tahir — civil engineer: bridge inspection, construction inspection and supervision, project engineering. M.S. Civil Engineering, University of New Haven.">
+<meta property="og:title" content="Muhammad Afan Tahir — Civil Engineer">
+<meta property="og:description" content="Bridge & construction inspection · construction management · project engineering">
+<meta property="og:image" content="https://afantahir.github.io/img/card-front.jpg">
+<meta property="og:url" content="https://afantahir.github.io">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect x=%223%22 y=%223%22 width=%2210%22 height=%2210%22 transform=%22rotate(45 8 8)%22 fill=%22%23e4571b%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,600;100,700;100,800;100,900&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Layout: civil-engineering palette — structural navy, safety orange, hi-vis yellow accents, concrete grey paper. Hero = blueprint band with crossfading site photos; one cinematic "On site" carousel; leadership mosaic; lightbox everywhere. */
+:root{
+  --bg:#f4f2ec; --panel:#ffffff; --ink:#0b1b2e; --ink-2:#3d4c60; --ink-3:#5a6880;
+  --rule:#dcd8cd; --accent:#e4571b; --accent-text:#b43f0c; --accent-btn:#c2410c; --btn-ink:#ffffff; --accent-2:#ff9a5c; --accent-ink:#ffffff; --tint:#fcebe0;
+  --hivis:#ffcc00; --steel:#0a2240; --steel-2:#113457; --grid:rgba(255,255,255,.07); --onsteel:#eaf0f7; --onsteel-2:#a9b8cc;
+  --display:'Archivo',system-ui,sans-serif; --body:'IBM Plex Serif',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --shadow:0 12px 34px rgba(11,35,64,.10);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0a1727; --panel:#102238; --ink:#eaf0f7; --ink-2:#b7c3d3; --ink-3:#8392a8; --rule:#22364f; --accent:#ff6f33; --accent-text:#ff8a55; --accent-btn:#ff6f33; --btn-ink:#0b1b2e; --accent-2:#ffa070; --accent-ink:#0f1e30; --tint:#2a1c14;
+  --steel:#060f1b; --steel-2:#0b2340; --shadow:0 12px 34px rgba(0,0,0,.45); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a1727; --panel:#102238; --ink:#eaf0f7; --ink-2:#b7c3d3; --ink-3:#8392a8; --rule:#22364f; --accent:#ff6f33; --accent-text:#ff8a55; --accent-btn:#ff6f33; --btn-ink:#0b1b2e; --accent-2:#ffa070; --accent-ink:#0f1e30; --tint:#2a1c14;
+  --steel:#060f1b; --steel-2:#0b2340; --shadow:0 12px 34px rgba(0,0,0,.45); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;margin:0;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.015em;line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(42px,7.2vw,84px);font-weight:900}
+h2{font-size:clamp(28px,4vw,46px);font-weight:800}
+h3{font-size:20px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--ink-2)}
+section{padding-block:76px;position:relative}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 24px;margin-bottom:36px}
+.sec-head .eyebrow{margin-bottom:10px;display:block}
+.sec-head .eyebrow::before{content:"";display:inline-block;width:0;height:2px;background:var(--accent);vertical-align:middle;margin-right:10px;transition:width .8s cubic-bezier(.2,.7,.2,1)}
+.sec-head.in .eyebrow::before{width:26px}
+
+/* progress bar */
+.prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--hivis));z-index:50;transition:width .1s linear}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--steel) 84%,transparent);backdrop-filter:blur(10px);color:var(--onsteel);border-bottom:1px solid rgba(255,255,255,.08);transition:background .3s,color .3s}
+.nav.light{background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);border-bottom-color:var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.brand{font-family:var(--display);font-weight:800;text-decoration:none;font-size:15px;display:flex;gap:10px;align-items:center;letter-spacing:.02em}
+.brand i{width:11px;height:11px;background:var(--accent);display:inline-block;transform:rotate(45deg);box-shadow:0 0 0 3px color-mix(in srgb,var(--hivis) 35%,transparent)}
+.nav ul{display:flex;gap:4px 22px;list-style:none;margin:0;padding:0;flex-wrap:wrap;justify-content:flex-end}
+.nav a.link{text-decoration:none;font-family:var(--display);font-size:14px;font-weight:500;opacity:.82;position:relative}
+.nav a.link::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:2px;background:var(--accent);transition:right .25s}
+.nav a.link:hover{opacity:1}.nav a.link:hover::after{right:0}
+.nav .cta{font-family:var(--display);font-size:13px;font-weight:700;text-decoration:none;background:var(--accent-btn);color:var(--btn-ink);padding:9px 15px;border-radius:4px;white-space:nowrap}
+
+/* hero */
+.hero{background:var(--steel);color:var(--onsteel);position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 70% 40%,#000 25%,transparent 75%);animation:gridDrift 30s linear infinite;z-index:-1}
+.hero::after{content:"";position:absolute;width:70vw;height:70vw;max-width:900px;max-height:900px;right:-20vw;top:-30vw;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 32%,transparent),transparent 60%);filter:blur(10px);z-index:-1;animation:pulse 9s ease-in-out infinite}
+@keyframes gridDrift{to{background-position:48px 48px}}
+@keyframes pulse{50%{opacity:.6;transform:scale(1.08)}}
+.hero .wrap{padding-block:72px 64px;display:grid;grid-template-columns:1.2fr .9fr;gap:52px;align-items:center}
+.hero .tag{display:inline-flex;gap:12px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hivis);margin-bottom:22px}
+.hero .tag::before{content:"";width:34px;height:2px;background:var(--hivis)}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s;color:var(--accent-2)}
+@keyframes rise{from{transform:translateY(110%);opacity:0}}
+.hero .lead{font-size:clamp(17px,1.6vw,20px);color:var(--onsteel-2);max-width:58ch;margin-top:24px;animation:fade 1s .35s both}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;animation:fade 1s .5s both}
+.btn{font-family:var(--display);font-weight:700;font-size:15px;text-decoration:none;padding:13px 20px;border-radius:5px;border:1.5px solid currentColor;display:inline-flex;gap:8px;align-items:center;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;background:none;color:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.primary{background:var(--accent-btn);border-color:var(--accent-btn);color:var(--btn-ink);box-shadow:0 6px 20px color-mix(in srgb,var(--accent) 40%,transparent)}
+.btn.ghost{color:var(--onsteel)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--hivis);outline-offset:3px}
+.contact-line{display:flex;flex-wrap:wrap;gap:6px 24px;margin-top:26px;font-family:var(--mono);font-size:13px;color:var(--onsteel-2);animation:fade 1s .65s both}
+
+/* hero slideshow */
+.frame{position:relative;animation:fade 1s .3s both}
+.slides{position:relative;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:var(--steel-2);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;transform:scale(1.02)}
+.slides img.on{opacity:1;animation:kb 7s ease-in-out forwards}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.10)}}
+.slides .cap{position:absolute;left:0;right:0;bottom:0;padding:46px 16px 14px;font-family:var(--mono);font-size:12px;line-height:1.4;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.dots{position:absolute;top:12px;right:12px;display:flex;gap:6px}
+.dots button{width:22px;height:4px;border:0;border-radius:2px;background:rgba(255,255,255,.4);padding:0;cursor:pointer;transition:background .3s}
+.dots button.on{background:var(--hivis)}
+.frame .cross{position:absolute;inset:-14px;pointer-events:none}
+.frame .cross::before,.frame .cross::after{content:"";position:absolute;border:1.5px solid var(--hivis);width:26px;height:26px}
+.frame .cross::before{left:0;top:0;border-right:0;border-bottom:0}
+.frame .cross::after{right:0;bottom:0;border-left:0;border-top:0}
+.frame .badge{position:absolute;left:-10px;top:18px;background:var(--panel);color:var(--ink);border-radius:6px;padding:10px 14px;box-shadow:var(--shadow);font-family:var(--display);font-size:13px;font-weight:700;display:flex;gap:10px;align-items:center;animation:float 5s ease-in-out infinite;z-index:2}
+.frame .badge i{width:9px;height:9px;border-radius:50%;background:#2fbf71;box-shadow:0 0 0 4px rgba(47,191,113,.25)}
+@keyframes float{50%{transform:translateY(-6px)}}
+
+/* stats */
+.stats{background:var(--panel);border-bottom:1px solid var(--rule);box-shadow:var(--shadow);position:relative;z-index:2}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:26px 22px;border-right:1px solid var(--rule);position:relative}
+.stat::before{content:"";position:absolute;left:22px;top:18px;width:28px;height:3px;background:var(--hivis)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--display);font-size:42px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;color:var(--accent);margin-top:10px}
+.stat > span{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;display:block;margin-top:8px}
+
+/* reveal */
+.rv{opacity:1;transform:none}
+@media (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .rv.in{opacity:1;transform:none}
+  .js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}
+}
+
+/* credentials: tabbed, compact, expandable rows */
+.cred{display:grid;grid-template-columns:240px 1fr;gap:0;background:var(--panel);border:1px solid var(--rule);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+.ctabs{display:flex;flex-direction:column;background:var(--steel);padding:10px;gap:4px}
+.ctab{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:6px;font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--onsteel-2);transition:background .2s,color .2s}
+.ctab b{font-family:var(--mono);font-size:11px;font-weight:500;padding:2px 7px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--onsteel-2)}
+.ctab:hover{color:var(--onsteel);background:rgba(255,255,255,.05)}
+.ctab[aria-selected="true"]{background:var(--accent-btn);color:var(--btn-ink)}
+.ctab[aria-selected="true"] b{background:rgba(0,0,0,.18);color:var(--btn-ink)}
+.ctab:focus-visible{outline:2px solid var(--hivis);outline-offset:2px}
+.cpanel{padding:8px 0;min-width:0}
+.cpanel[hidden]{display:none}
+.crow{border-bottom:1px solid var(--rule)}
+.crow:last-child{border-bottom:0}
+.crow summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:92px 1fr auto 18px;gap:14px;align-items:center;padding:13px 20px;transition:background .2s}
+.crow summary::-webkit-details-marker{display:none}
+.crow summary:hover{background:color-mix(in srgb,var(--accent) 6%,transparent)}
+.crow .code{font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--accent-text);letter-spacing:.04em}
+.crow .nm{font-family:var(--display);font-weight:600;font-size:15.5px;line-height:1.25;min-width:0}
+.crow .nm small{display:block;font-family:var(--mono);font-weight:400;font-size:11.5px;color:var(--ink-3);letter-spacing:.04em;margin-top:2px}
+.crow .yr{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.crow .yr.soon{color:var(--accent-text)}
+.crow .pm{width:18px;height:18px;position:relative}
+.crow .pm::before,.crow .pm::after{content:"";position:absolute;left:3px;right:3px;top:8px;height:2px;background:var(--ink-3);transition:transform .25s}
+.crow .pm::after{transform:rotate(90deg)}
+.crow[open] .pm::after{transform:rotate(0)}
+.crow p{padding:0 20px 14px 126px;font-size:15px;color:var(--ink-2);max-width:72ch;animation:fade .3s both}
+.csum{display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:18px;font-family:var(--mono);font-size:12.5px;color:var(--ink-2)}
+.csum b{font-family:var(--display);font-size:20px;color:var(--accent-text);margin-right:6px}
+@media (max-width:860px){
+  .cred{grid-template-columns:1fr}
+  .ctabs{flex-direction:row;overflow-x:auto;scrollbar-width:none}
+  .ctab{white-space:nowrap;padding:10px 12px;font-size:13.5px}
+  .crow summary{grid-template-columns:1fr auto 18px;gap:4px 12px;padding:12px 16px}
+  .crow .code{grid-column:1/-1}
+  .crow p{padding:0 16px 14px}
+}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.skills{display:grid;gap:16px;margin-top:22px}
+.chip{font-family:var(--mono);font-size:12.5px;padding:7px 12px;border:1px solid var(--rule);border-radius:999px;background:var(--panel);transition:border-color .2s,color .2s}
+.chip:hover{border-color:var(--accent);color:var(--accent-text)}
+
+/* photo component: blurred fill + contained image, never crops a person */
+.ph{position:relative;overflow:hidden;background:var(--steel-2);border-radius:8px;cursor:zoom-in;margin:0}
+.ph .bg{position:absolute;inset:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(18px) brightness(.55);transform:scale(1.1)}
+.ph .fg{position:relative;width:100%;height:100%;object-fit:contain;transition:transform .6s}
+.ph:hover .fg{transform:scale(1.03)}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 12px;font-family:var(--mono);font-size:12px;line-height:1.4;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:10px;overflow:hidden;text-decoration:none;display:grid;grid-template-rows:auto 1fr;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;position:relative}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.card:hover .cover img{transform:scale(1.05)}
+ .card.wide{grid-column:1/-1;grid-template-columns:1.1fr 1fr;grid-template-rows:auto}
+.card.wide .cover{aspect-ratio:auto;min-height:100%}
+.card.wide .cover img{object-fit:contain;background:#fff}
+.card .cover{aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--steel-2)}
+.card .cover .ph{height:100%}
+.card .cover .ph .fg{height:100%}
+.card .cover img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card .num{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:12px;background:var(--steel);color:var(--hivis);padding:4px 8px;border-radius:4px;letter-spacing:.08em}
+.card .body{padding:20px 20px 22px;display:grid;gap:8px;align-content:start}
+.card .role{font-family:var(--mono);font-size:12px;color:var(--accent-text);letter-spacing:.06em;text-transform:uppercase}
+.card p{color:var(--ink-2);font-size:15.5px}
+.card .more{font-family:var(--display);font-weight:700;font-size:14px;margin-top:8px;display:inline-flex;gap:6px;align-items:center}
+.card .more::after{content:"→";transition:transform .2s}
+.card:hover .more::after{transform:translateX(4px)}
+
+/* on-site carousel */
+.onsite{background:var(--steel);color:var(--onsteel);padding-block:70px;position:relative;overflow:hidden}
+.onsite::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(90deg,#000,transparent 60%)}
+.onsite .wrap{position:relative}
+.onsite .eyebrow{color:var(--hivis)}
+.onsite .sec-head .eyebrow::before{background:var(--hivis)}
+.carousel{position:relative;border-radius:12px;overflow:hidden;background:var(--steel-2);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.track{display:flex;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.slide{flex:0 0 100%;aspect-ratio:16/9;position:relative}
+.slide .ph{border-radius:0;height:100%}
+.slide .ph .fg{height:100%}
+.carousel .arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(11,35,64,.75);color:#fff;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:background .2s;z-index:2}
+.carousel .arrow:hover{background:var(--accent)}
+.carousel .prev{left:14px}.carousel .next{right:14px}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;margin-top:14px}
+.thumbs button{border:2px solid transparent;border-radius:6px;padding:0;overflow:hidden;cursor:pointer;background:none;aspect-ratio:4/3;opacity:.55;transition:opacity .2s,border-color .2s}
+.thumbs button img{width:100%;height:100%;object-fit:cover}
+.thumbs button.on{opacity:1;border-color:var(--hivis)}
+.thumbs button:hover{opacity:1}
+/* timeline */
+.tl{position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent) var(--draw,0%),var(--rule) 0)}
+.row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:22px 0;position:relative}
+.row::before{content:"";position:absolute;left:-27px;top:30px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2.5px solid var(--accent)}
+.row .when{font-family:var(--mono);font-size:13px;color:var(--ink-3);padding-top:4px;font-variant-numeric:tabular-nums}
+.row h3{margin-bottom:2px}
+.row .org{font-family:var(--display);color:var(--ink-2);font-size:15px;margin-bottom:8px;font-weight:500}
+.row ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15.5px;display:grid;gap:5px}
+
+/* lists */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px;align-items:start}
+.list{display:grid;gap:0;align-content:start}
+.item{padding:14px 0;border-top:1px solid var(--rule)}
+.item:first-child{border-top:0;padding-top:0}
+.item b{font-family:var(--display);font-weight:700;display:block}
+.item span{font-family:var(--mono);font-size:12.5px;color:var(--ink-3)}
+.edu{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+.edu-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.edu-photos .ph{aspect-ratio:4/5}
+.edu-photos .ph .fg{height:100%}
+
+/* marquee */
+.marq{overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--panel);padding-block:14px}
+.marq .track{display:flex;gap:48px;width:max-content;animation:marq 28s linear infinite;font-family:var(--display);font-weight:700;font-size:15px;white-space:nowrap;transition:none}
+.marq .track span::before{content:"◆";color:var(--accent);margin-right:14px;font-size:11px}
+@keyframes marq{to{transform:translateX(-50%)}}
+.marq:hover .track{animation-play-state:paused}
+
+/* leadership mosaic */
+.mosaic{columns:3;column-gap:14px}
+.mosaic .ph{break-inside:avoid;margin-bottom:14px;display:block;aspect-ratio:auto}
+.mosaic .ph .fg{height:auto}
+.mosaic .ph .bg{display:none}
+.lead-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.lead-card{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:20px;transition:transform .25s,box-shadow .25s}
+.lead-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.lead-card .eyebrow{margin-bottom:8px}
+.lead-card b{font-family:var(--display);font-weight:700;display:block;margin-bottom:6px;font-size:17px}
+.lead-card p{font-size:15px;color:var(--ink-2)}
+
+/* contact */
+.contact{background:var(--steel);color:var(--onsteel);position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 20% 50%,#000 20%,transparent 70%)}
+.contact .wrap{position:relative}
+.contact .eyebrow{color:var(--hivis)}
+.contact .list .item{border-top-color:rgba(255,255,255,.12)}
+.contact .list .item span{color:var(--onsteel)}
+.contact .list .item b{color:var(--onsteel-2);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--mono);font-weight:400}
+.avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);box-shadow:0 8px 24px rgba(0,0,0,.35);margin-bottom:18px;display:block}
+.copy{font-family:var(--mono);font-size:11px;border:1px solid rgba(255,255,255,.25);background:transparent;color:var(--onsteel);border-radius:4px;padding:3px 8px;margin-left:10px;cursor:pointer}
+.copy:hover{border-color:var(--hivis)}
+
+.bizcard{margin-top:22px}
+.flip{all:unset;cursor:pointer;display:block;margin-top:10px;perspective:1200px;width:100%;max-width:420px;aspect-ratio:3.5/2}
+.flip .fc{position:relative;display:block;width:100%;height:100%;transition:transform .8s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.flip.on .fc{transform:rotateY(180deg)}
+.flip img{position:absolute;inset:0;width:100%;height:100%;border-radius:10px;backface-visibility:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.flip .fb{transform:rotateY(180deg)}
+.flip:focus-visible{outline:2px solid var(--hivis);outline-offset:4px;border-radius:10px}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(5,12,22,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-left,0px));animation:fade .25s both}
+.lb.open{display:flex}
+.lb.doc{display:block;overflow-y:auto;padding:70px max(16px,env(safe-area-inset-right,0px)) 50px}
+.lb.doc img{max-height:none;width:100%;max-width:880px;margin:0 auto;display:block}
+.lb.doc .lcap{position:fixed}
+.lb.doc .x{position:fixed}
+.lb img{max-width:min(96vw,1400px);max-height:84vh;background:#fff;object-fit:contain;border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb .lcap{position:absolute;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom,0px));text-align:center;color:#fff;font-family:var(--mono);font-size:13px;padding:0 70px}
+.lb button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer;display:grid;place-items:center}
+.lb button:hover{background:var(--accent)}
+.lb .x{top:max(16px,env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px))}
+.lb .p{left:max(12px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb .n{right:max(12px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+
+/* project pages */
+.page{display:none}
+.page:target{display:block}
+body:has(.page:target) #home{display:none}
+.page .hd{background:var(--steel);color:var(--onsteel);position:relative;overflow:hidden}
+.page .hd::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 80% 50%,#000 20%,transparent 70%)}
+.page .hd .wrap{position:relative;padding-block:40px 44px}
+.page .hd .eyebrow{color:var(--hivis)}
+.page .hd h2{margin-top:10px;font-size:clamp(30px,5vw,54px)}
+.page .bd .wrap{padding-block:36px 80px}
+.back{font-family:var(--display);font-size:14px;font-weight:600;text-decoration:none;color:var(--onsteel-2);display:inline-flex;gap:6px;align-items:center;margin-bottom:24px}
+.back:hover{color:var(--onsteel)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;margin:0 0 30px;border:1px solid var(--rule);border-radius:8px;background:var(--panel);overflow:hidden}
+.fact{padding:14px 16px;border-right:1px solid var(--rule)}
+.fact:last-child{border-right:0}
+.fact span{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);display:block;margin-bottom:3px}
+.fact b{font-family:var(--display);font-weight:700;font-size:15px}
+.prose{max-width:68ch;display:grid;gap:14px}
+.prose h3{margin-top:16px;padding-left:14px;border-left:3px solid var(--accent)}
+.prose ul{margin:0;padding-left:20px;display:grid;gap:7px;color:var(--ink-2)}
+.gallery{columns:3;column-gap:14px;margin:0 0 32px}
+.gallery .ph{break-inside:avoid;margin-bottom:14px;display:block}
+.gallery .ph .fg{height:auto}
+.gallery .ph .bg{display:none}
+.callout{border-left:3px solid var(--accent);background:var(--tint);padding:16px 18px;border-radius:0 8px 8px 0;margin:18px 0;font-size:16px;font-style:italic}
+
+footer{padding-block:28px 46px;font-family:var(--mono);font-size:12.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;border-top:1px solid var(--rule)}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:34px;padding-block:48px 56px}
+  .frame{order:-1;max-width:380px}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+  .projects,.cols,.lead-grid,.edu{grid-template-columns:1fr}
+  .card.wide{grid-template-columns:1fr}.card.wide .cover{aspect-ratio:16/9}
+  .row{grid-template-columns:1fr;gap:4px}
+  .mosaic,.gallery{columns:2}
+  .nav ul{display:none}
+  section{padding-block:56px}
+  .slide{aspect-ratio:4/3}
+  .carousel .arrow{width:38px;height:38px;font-size:18px}
+}
+@media (max-width:480px){.mosaic{columns:2}.gallery{columns:1}}
+@media (prefers-reduced-motion:reduce){
+  .hero::before,.hero::after,.marq .track,.frame .badge,.hero h1 .line span,.hero .lead,.ctas,.contact-line,.frame,.slides img.on{animation:none}
+  .track{transition:none}
+}
+</style>
+</head>
+<body>
+
+
+<div class="prog" id="prog"></div>
+<nav class="nav" id="nav"><div class="wrap">
+  <a class="brand" href="#top"><i></i>M. AFAN TAHIR</a>
+  <ul>
+    <li><a class="link" href="#education">Education</a></li>
+    <li><a class="link" href="#projects">Projects</a></li>
+    <li><a class="link" href="#onsite">On site</a></li>
+    <li><a class="link" href="#experience">Experience</a></li>
+    <li><a class="link" href="#credentials">Credentials</a></li>
+    <li><a class="link" href="#leadership">Leadership</a></li>
+  </ul>
+  <a class="cta" href="#contact">Contact</a>
+</div></nav>
+
+<main id="home">
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="tag">Inspection · Construction · Project Engineering</div>
+      <h1><span class="line"><span>Muhammad</span></span><span class="line"><span>Afan Tahir</span></span></h1>
+      <p class="lead">Civil engineer finishing an M.S. at the University of New Haven (GPA 3.78) with hands‑on bridge inspection, construction inspection, construction supervision and QA/QC experience. I have supervised concrete rehabilitation on 5+ occupied sites, including a major shopping mall and a pedestrian bridge, with every RFI accepted, and inspected an in‑service Connecticut bridge through to a full condition report. Teaching Assistant to the Department Chair and President of the SEI Graduate Chapter. Looking for full‑time inspection, field engineering, project engineering or construction management roles from May 2027.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#projects">See project work</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/afantahir" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost resume-open" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <div class="contact-line">
+        <span>West Haven, CT · own vehicle</span>
+        <span>afantahir.work@gmail.com</span>
+        <span>203‑410‑7152</span>
+      </div>
+    </div>
+    <div class="frame">
+      <div class="cross"></div>
+      <div class="slides" id="slides">
+        <img src="img/hero-stratford.jpg" alt="Afan in hard hat and vest at the Stratford rail bridge site" data-cap="Stratford, CT · rail bridge replacement site visit · Oct 2026" class="on">
+        <img src="img/hero-b17.jpg" alt="Afan in PPE beneath Bridge 03017 in New Haven" data-cap="Bridge 03017, New Haven · field inspection day">
+        <img src="img/hero-dinspire.jpg" alt="Afan in a white hard hat on the D'Inspire car-park repair site" data-cap="D'Inspire Residence, Johor · crack rectification supervision">
+        <img src="img/hero-cmaa.jpg" alt="Afan in a suit at the CMAA Connecticut dinner" data-cap="CMAA Connecticut · Looking Down the Road · Sep 2026">
+        <img src="img/hero-grad.jpg" alt="Afan in graduation gown holding the degree scroll" data-cap="B.Eng. Civil Engineering (Hons), CGPA 3.91 · Feb 2025">
+        <div class="cap" id="slidecap">Stratford, CT · rail bridge replacement site visit · Oct 2026</div>
+        <div class="dots" id="dots"></div>
+      </div>
+      <div class="badge"><i></i>Full‑time from May 2027</div>
+    </div>
+  </div>
+</header>
+
+<div class="stats"><div class="wrap">
+  <div class="stat"><b><span class="count" data-to="3.78" data-dec="2">0</span></b><span>GPA · M.S. Civil, UNH</span></div>
+  <div class="stat"><b><span class="count" data-to="6">0</span></b><span>FHWA‑NHI courses</span></div>
+  <div class="stat"><b><span class="count" data-to="6">0</span></b><span>Site &amp; design projects</span></div>
+  <div class="stat"><b><span class="count" data-to="2">0</span></b><span>Published papers</span></div>
+</div></div>
+
+<div class="wrap">
+<section id="education">
+  <div class="sec-head rv"><div><span class="eyebrow">Education</span><h2>Two degrees, one direction</h2></div></div>
+  <div class="edu">
+    <div>
+      <div class="list rv">
+        <div class="item"><b>M.S. Civil Engineering — University of New Haven</b><span>May 2027 · GPA 3.78/4.0 · Provost Assistantship (2026–2027)</span></div>
+        <div class="item"><b>B.Eng. Civil Engineering (Hons) — MAHSA University, Malaysia</b><span>Feb 2025 · GPA 3.91/4.0 · 8× Dean’s Award · Gold Award, Final Thesis</span></div>
+        <div class="item"><b>Awards</b><span>Gold Award, ESTE'25 · Best Presenter, Mi‑SITE 2024 · Best Poster, ESTE'24 · First Prize, Bridge Competition</span></div>
+        <div class="item"><b>Relevant coursework</b><span>Bridge Inspection · Construction Inspection &amp; Monitoring · Building Inspection · Steel Design · Foundation Design</span></div>
+      </div>
+    </div>
+    <div class="edu-photos rv d1">
+      <figure class="ph"><img class="bg" alt=""><img class="fg" src="img/hero-grad.jpg" alt="Afan in graduation gown holding his degree scroll"><figcaption>MAHSA graduation · Feb 2025</figcaption></figure>
+      <figure class="ph"><img class="bg" alt=""><img class="fg" src="img/x-deanslist.jpg" alt="Afan holding his Dean’s List award certificate on stage"><figcaption>Dean’s List Award × 8</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-head rv"><div><span class="eyebrow">Selected projects</span><h2>Inspection, repair &amp; design</h2></div><span class="eyebrow">Each opens a one‑page summary</span></div>
+  <div class="projects">
+    <a class="card rv" href="#bridge03017">
+      <div class="cover"><img src="img/b17-cover.jpg" alt="Inspection team walking beneath the steel girders of Bridge 03017 on Willow Street"></div><span class="num">01</span>
+      <div class="body"><span class="role">Bridge inspection · New Haven, CT · Oct–Dec 2025</span><h3>Bridge 03017 inspection report</h3><p>Assistant team leader on a supervised academic inspection: file review, field visit, Bluebeam defect sketches and a report to NBIS and CTDOT standards.</p><span class="more">Read the summary</span></div>
+    </a>
+    <a class="card rv d1" href="#pavilion">
+      <div class="cover"><img src="img/pv-cover.jpg" alt="Afan with a Pavilion Operations Support Services officer, inspection file in hand"></div><span class="num">02</span>
+      <div class="body"><span class="role">Concrete repair supervision · Malaysia · 2023–24</span><h3>Pavilion Mall &amp; D'Inspire Residence</h3><p>Assistant project engineer with RNC: crack rectification across four levels of an occupied mall and a high‑rise car park, with every RFI accepted.</p><span class="more">Read the summary</span></div>
+    </a>
+    <a class="card rv" href="#ampang">
+      <div class="cover"><img src="img/site-ampang-bridge.jpg" alt="Pedestrian overbridge across Jalan Ampang, Kuala Lumpur"></div><span class="num">03</span>
+      <div class="body"><span class="role">Condition assessment · Kuala Lumpur · 2024–25</span><h3>Jalan Ampang pedestrian bridge</h3><p>Structural integrity appraisal under Ir. Parnam Singh: dimensional survey, defect mapping, materials testing and remedial works plan.</p><span class="more">Read the summary</span></div>
+    </a>
+    <a class="card rv d1" href="#capstone">
+      <div class="cover"><img src="img/p4-tekla.jpg" alt="3D structural model of the three-storey school in Tekla Structural Designer"></div><span class="num">04</span>
+      <div class="body"><span class="role">Structural design · MAHSA University · 2025</span><h3>3‑storey school building (BUILDXPERT)</h3><p>Eurocode hand calculations checked against Tekla and Revit models, BOQ at ~RM 40 M, soil investigation, WBS and MS Project schedule.</p><span class="more">Read the summary</span></div>
+    </a>
+    <a class="card wide rv" href="#infra">
+      <div class="cover"><img src="img/in-profile.jpg" alt="Water elevation profile along the drainage line from manhole M-1 to outfall O-1"></div><span class="num">05</span>
+      <div class="body"><span class="role">Infrastructure design · MAHSA University · Mar–Aug 2024</span><h3>Bandar Sujana Putra SP2 infrastructure design</h3><p>Earthworks, road layout and stormwater drainage for a new development in Selangor: manhole and conduit network modelled with a water elevation profile from M‑1 to the outfall.</p><span class="more">Read the summary</span></div>
+    </a>
+  </div>
+  <p class="muted rv" style="margin-top:20px;font-size:15px">Also: Tevolli Villas waterproofing inspection, Bangsar · factory loading inspections for RNC.</p>
+</section>
+
+<section id="credentials">
+  <div class="sec-head rv"><div><span class="eyebrow">Credentials</span><h2>Certified for the field</h2></div><span class="eyebrow">Inspection · safety · construction management</span></div>
+  <div class="csum rv"><span><b>18</b>credentials</span><span><b>6</b>FHWA‑NHI courses</span><span><b>FE</b>scheduled Dec 2026</span></div>
+  <div class="cred rv">
+    <div class="ctabs" role="tablist" aria-label="Credential categories">
+      <button class="ctab" role="tab" id="t-insp" aria-controls="p-insp" aria-selected="true">Bridge &amp; inspection<b>6</b></button>
+      <button class="ctab" role="tab" id="t-cm" aria-controls="p-cm" aria-selected="false">Construction &amp; safety<b>4</b></button>
+      <button class="ctab" role="tab" id="t-lic" aria-controls="p-lic" aria-selected="false">Licensure &amp; sustainability<b>4</b></button>
+      <button class="ctab" role="tab" id="t-pm" aria-controls="p-pm" aria-selected="false">Project management<b>4</b></button>
+    </div>
+    <div class="cpanel" role="tabpanel" id="p-insp" aria-labelledby="t-insp">
+      <details class="crow"><summary><span class="code">NHI 130101/A</span><span class="nm">Safety Inspection of In‑Service Bridges<small>FHWA · National Highway Institute · 15 hrs</small></span><span class="yr">Sep 2025</span><span class="pm" aria-hidden="true"></span></summary><p>NBIS inspection procedures, condition ratings and element‑level inspection of decks, superstructures and substructures.</p></details>
+      <details class="crow"><summary><span class="code">NHI 130128</span><span class="nm">Bridge Construction Inspection<small>FHWA · National Highway Institute · 8 hrs</small></span><span class="yr">Nov 2025</span><span class="pm" aria-hidden="true"></span></summary><p>Inspecting foundations, substructure, superstructure and deck construction against plans and specifications.</p></details>
+      <details class="crow"><summary><span class="code">NHI 130087A</span><span class="nm">Inspection of Ancillary Highway Structures<small>FHWA · National Highway Institute · 4 hrs</small></span><span class="yr">Nov 2025</span><span class="pm" aria-hidden="true"></span></summary><p>Sign, signal and high‑mast lighting structures: fatigue‑prone details and inspection procedures.</p></details>
+      <details class="crow"><summary><span class="code">NHI 130111</span><span class="nm">Nondestructive Evaluation (NDE)<small>FHWA · National Highway Institute</small></span><span class="yr">Oct 2026</span><span class="pm" aria-hidden="true"></span></summary><p>Background, theory and field use of NDE methods for concrete and steel bridge elements.</p></details>
+      <details class="crow"><summary><span class="code">NHI 130124</span><span class="nm">Tunnel Safety Inspection<small>FHWA · National Highway Institute</small></span><span class="yr">Oct 2026</span><span class="pm" aria-hidden="true"></span></summary><p>Tunnel components, safety systems and inspection documentation under the National Tunnel Inspection Standards.</p></details>
+      <details class="crow"><summary><span class="code">NHI 134108</span><span class="nm">Highway Plan Reading Series<small>FHWA · National Highway Institute · 8 modules</small></span><span class="yr">Oct 2026</span><span class="pm" aria-hidden="true"></span></summary><p>Highway, grading, traffic control, erosion control, right‑of‑way, county, bridge and culvert plans, plus quantity estimates.</p></details>
+    </div>
+    <div class="cpanel" role="tabpanel" id="p-cm" aria-labelledby="t-cm" hidden>
+      <details class="crow"><summary><span class="code">CMIT</span><span class="nm">Construction Manager‑in‑Training<small>CMAA · Construction Manager Certification Institute</small></span><span class="yr">Dec 2025</span><span class="pm" aria-hidden="true"></span></summary><p>Valid to 2032. Construction management body of knowledge: project management, cost, time, quality, contract administration and safety.</p></details>
+      <details class="crow"><summary><span class="code">OSHA 30</span><span class="nm">30‑Hour Construction Safety &amp; Health<small>OSHA Outreach · 360training</small></span><span class="yr">Jan 2026</span><span class="pm" aria-hidden="true"></span></summary><p>Fall protection, scaffolds, excavations, electrical, PPE and hazard recognition on construction sites.</p></details>
+      <details class="crow"><summary><span class="code">CIDB SICW</span><span class="nm">Safety Induction for Construction Workers<small>Construction Industry Development Board, Malaysia</small></span><span class="yr">2024</span><span class="pm" aria-hidden="true"></span></summary><p>Site safety induction required for all personnel on Malaysian construction sites.</p></details>
+      <details class="crow"><summary><span class="code">Workshop</span><span class="nm">Drone Scanning &amp; Thermal Inspection<small>University of New Haven · Dr. Reihaneh Samsami</small></span><span class="yr">2025</span><span class="pm" aria-hidden="true"></span></summary><p>Drone flight planning, aerial mapping and thermal imaging to find heat loss and surface defects on building envelopes.</p></details>
+    </div>
+    <div class="cpanel" role="tabpanel" id="p-lic" aria-labelledby="t-lic" hidden>
+      <details class="crow"><summary><span class="code">NCEES FE</span><span class="nm">FE Civil Exam<small>National Council of Examiners for Engineering and Surveying</small></span><span class="yr soon">Dec 2026</span><span class="pm" aria-hidden="true"></span></summary><p>Scheduled. First step to Engineer‑in‑Training (EIT) and the PE license.</p></details>
+      <details class="crow"><summary><span class="code">BEM</span><span class="nm">Registered Graduate Engineer (Civil)<small>Board of Engineers Malaysia</small></span><span class="yr">Aug 2025</span><span class="pm" aria-hidden="true"></span></summary><p>Registered graduate engineer status in Malaysia.</p></details>
+      <details class="crow"><summary><span class="code">LEED GA</span><span class="nm">LEED Green Associate — 195/200<small>USGBC · Green Business Certification Inc.</small></span><span class="yr">Mar 2026</span><span class="pm" aria-hidden="true"></span></summary><p>Green building principles and the LEED rating system; followed by 15 hrs on live LEED projects with cmk LEED.</p></details>
+      <details class="crow"><summary><span class="code">UN CC:Learn</span><span class="nm">Net Zero 101: What, Why and How<small>UNU‑IAS · UN CC:Learn</small></span><span class="yr">Nov 2025</span><span class="pm" aria-hidden="true"></span></summary><p>Foundations of net‑zero targets and decarbonisation pathways.</p></details>
+    </div>
+    <div class="cpanel" role="tabpanel" id="p-pm" aria-labelledby="t-pm" hidden>
+      <details class="crow"><summary><span class="code">LinkedIn · PMI</span><span class="nm">Primavera P6 Essential Training<small>LinkedIn Learning</small></span><span class="yr">Feb 2026</span><span class="pm" aria-hidden="true"></span></summary><p>Scheduling in P6: WBS, activities, relationships, critical path, resources and baselines.</p></details>
+      <details class="crow"><summary><span class="code">LinkedIn · PMI</span><span class="nm">Excel Essential Training (Microsoft 365)<small>LinkedIn Learning</small></span><span class="yr">Feb 2026</span><span class="pm" aria-hidden="true"></span></summary><p>Formulas, tables and data tools for quantity and cost tracking.</p></details>
+      <details class="crow"><summary><span class="code">LinkedIn · PMI</span><span class="nm">Construction Management Foundations · Safety &amp; Health<small>LinkedIn Learning · Jim Rogers</small></span><span class="yr">Feb 2024</span><span class="pm" aria-hidden="true"></span></summary><p>Construction phases, delivery methods, contracts, site safety programmes.</p></details>
+      <details class="crow"><summary><span class="code">LinkedIn · PMI</span><span class="nm">Project Management: Schedules · Procurement<small>LinkedIn Learning</small></span><span class="yr">Feb–Mar 2024</span><span class="pm" aria-hidden="true"></span></summary><p>Building and managing schedules; procurement planning and contract types.</p></details>
+    </div>
+  </div>
+  <div class="skills rv">
+    <div><span class="eyebrow">Field &amp; QA/QC</span><div class="chips"><span class="chip">NBI ratings</span><span class="chip">Crack mapping</span><span class="chip">Photo logs</span><span class="chip">Plan/spec compliance</span><span class="chip">Daily reports</span><span class="chip">Quantities</span><span class="chip">RFIs</span><span class="chip">Submittals</span><span class="chip">BOQs</span></div></div>
+    <div><span class="eyebrow">Software</span><div class="chips"><span class="chip">AutoCAD</span><span class="chip">Civil 3D</span><span class="chip">Revit</span><span class="chip">Navisworks</span><span class="chip">Bluebeam Revu</span><span class="chip">Tekla Structural Designer</span><span class="chip">MS Project</span><span class="chip">Primavera P6</span><span class="chip">SAFE</span><span class="chip">Excel</span></div></div>
+    <div><span class="eyebrow">Memberships</span><div class="chips"><span class="chip">ASCE</span><span class="chip">SEI</span><span class="chip">ACI</span><span class="chip">CMAA</span></div></div>
+  </div>
+</section>
+
+</div>
+
+<section class="onsite" id="onsite"><div class="wrap">
+  <div class="sec-head rv"><div><span class="eyebrow">On site</span><h2>Field days, 2023 – 2026</h2></div><span class="eyebrow" style="color:var(--onsteel-2)">Use the arrows or swipe · tap a photo to enlarge</span></div>
+  <div class="carousel rv" id="car">
+    <button class="arrow prev" id="prev" aria-label="Previous photo">‹</button>
+    <button class="arrow next" id="next" aria-label="Next photo">›</button>
+    <div class="track" id="track">
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/b17-willow.jpg" alt="Inspection team at the Willow Street intersection"><figcaption>Bridge 03017, New Haven · field day, Nov 2025 — team heading to the bridge</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/b17-under.jpg" alt="Team walking beneath the girders of Bridge 03017"><figcaption>Walking the abutment beneath the steel girders</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/b17-abutwall.jpg" alt="Inspectors examining the abutment wall"><figcaption>Examining patches, staining and efflorescence on the abutment</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-b17-review.jpg" alt="Three inspectors in PPE reviewing inspection forms beside the roadway"><figcaption>Bridge 03017, New Haven · reviewing the previous CTDOT report before the walk‑down</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/hero-b17.jpg" alt="Afan with flashlight beneath Bridge 03017"><figcaption>Abutment walk‑down with flashlight — stems and backwall</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-ampang-survey.jpg" alt="Afan with a hand-drawn side-view sketch and tape measure at the bridge stair"><figcaption>Jalan Ampang pedestrian bridge, KL · side‑view sketch and dimensional survey</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-laser.jpg" alt="Laser distance meter reading 0.165 m against a steel member"><figcaption>Laser measurement, 0.165 m — recorded for the as‑built drawings</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-pavilion-ops.jpg" alt="Afan with a Pavilion operations officer holding the inspection binder"><figcaption>Pavilion Mall, KL · with Operations Support Services, inspection file in hand</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-injection.jpg" alt="Two workers in PPE injecting epoxy into a floor crack"><figcaption>Crew sealing and injecting a slab crack — supervised repair</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-dinspire-tower.jpg" alt="D'Inspire Residence tower, Johor"><figcaption>D'Inspire Residence, Nusa Bestari, Johor · structural stabilisation of the car‑park</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/hero-dinspire.jpg" alt="Afan in white hard hat on the car-park repair site"><figcaption>D'Inspire car‑park — every crack tagged, numbered and measured before repair</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-stratford-group.jpg" alt="UNH students and GPI inspectors in PPE at the Stratford rail bridge site"><figcaption>Stratford rail bridge replacement, CT · site visit with GPI inspectors · Oct 2026</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-gpi-briefing.jpg" alt="A GPI engineer briefs students beside rebar cages and formwork"><figcaption>GPI briefing on GRS‑IBS abutments: 6‑inch lifts of No. 8 stone with biaxial geogrid</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-gpi-hook.jpg" alt="Two GPI inspectors examining a bent rebar hook"><figcaption>Rebar hook detail — checking bend radius and epoxy coating</figcaption></figure></div>
+      <div class="slide"><figure class="ph"><img class="bg" alt=""><img class="fg" src="img/site-rebar-hoop.jpg" alt="A GPI engineer holds up a rebar hoop beside stacked reinforcement"><figcaption>Reinforcement stock on site — hoops, cages and precast units</figcaption></figure></div>
+    </div>
+      </div>
+  <div class="thumbs" id="thumbs"></div>
+</div></section>
+
+<div class="marq" aria-hidden="true"><div class="track">
+  <span>Gold Award · ESTE'25</span><span>Best Presenter · Mi‑SITE 2024</span><span>Best Poster · ESTE'24</span><span>Dean's List × 8 · MAHSA</span><span>Provost Assistantship · UNH</span><span>President · SEI Grad Chapter</span><span>LEED GA 195/200</span><span>First Prize · Bridge Competition</span>
+  <span>Gold Award · ESTE'25</span><span>Best Presenter · Mi‑SITE 2024</span><span>Best Poster · ESTE'24</span><span>Dean's List × 8 · MAHSA</span><span>Provost Assistantship · UNH</span><span>President · SEI Grad Chapter</span><span>LEED GA 195/200</span><span>First Prize · Bridge Competition</span>
+</div></div>
+
+<div class="wrap">
+<section id="experience">
+  <div class="sec-head rv"><div><span class="eyebrow">Experience</span><h2>Field and project experience</h2></div></div>
+  <div class="tl" id="tl">
+    <div class="row rv"><div class="when">Oct – Dec 2025</div><div><h3>Assistant Team Leader — Supervised Academic Bridge Inspection</h3><div class="org">Bridge No. 03017 Routine Inspection · New Haven, CT · Dr. Byungik Chang, PE</div><ul><li>Inspected an in‑service bridge with the team: reviewed prior CTDOT records, walked abutments and superstructure, logged defects with photos.</li><li>Drafted plan and elevation sketches in Bluebeam Revu and mapped every observed defect (cracks, hollow areas, patches, efflorescence) to abutment and girder line.</li><li>Delivered the inspection report to FHWA NBIS and CTDOT standards: condition ratings, defect inventory and repair recommendations.</li></ul></div></div>
+    <div class="row rv"><div class="when">Aug 2026 – present</div><div><h3>Graduate Teaching Assistant</h3><div class="org">University of New Haven, Civil &amp; Environmental Engineering · West Haven, CT</div><ul><li>Selected by the Department Chair (Dr. Byungik Chang, PE) for the Provost Assistantship; run AutoCAD (CIVL 1109) and Materials Lab (CIVL 3323) sessions, lab QA/QC and departmental projects.</li></ul></div></div>
+    <div class="row rv"><div class="when">Mar 2026 – present</div><div><h3>LEED Project Trainee</h3><div class="org">cmk LEED · South Windsor, CT · Cynthia Kaplan, LEED AP BD+C</div><ul><li>Earned LEED Green Associate at 195/200, then completed 15 hrs of continuing education on live projects; contribute to credit documentation and Gold/Platinum certification strategy.</li></ul></div></div>
+    <div class="row rv"><div class="when">May 2024 – Feb 2025</div><div><h3>Project Engineer (part‑time)</h3><div class="org">Structural Healthcare Research Associates · Kuala Lumpur, Malaysia</div><ul><li>Jalan Ampang Pedestrian Bridge: executed the dimensional survey, produced as‑built AutoCAD drawings, mapped defects and drafted the remedial works plan for the structural integrity appraisal.</li></ul></div></div>
+    <div class="row rv"><div class="when">Aug 2023 – Apr 2024</div><div><h3>Assistant Project Engineer Intern</h3><div class="org">RNC Concrete Repair Specialist · Selangor, Malaysia</div><ul><li>Supervised 5+ concrete rehabilitation projects end‑to‑end: field inspection, crack mapping, before/after defect registers and crew supervision.</li><li>Pavilion Mall: directed crack rectification across four levels of an occupied mall; every RFI accepted by the consultant at monthly claims.</li><li>Certified repair quantities against approved plans and specifications; compiled daily site records, RFIs and BOQs that passed consultant audit.</li></ul></div></div>
+  </div>
+</section>
+
+
+<section id="research">
+  <div class="sec-head rv"><div><span class="eyebrow">Research &amp; publications</span><h2>AI for inspection, low‑carbon concrete</h2></div></div>
+  <div class="list rv">
+    <div class="item"><b>AI Tools for Bridge Inspection <span style="font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--accent-text);margin-left:8px;vertical-align:middle">ONGOING</span></b><span>Graduate research with Dr. Byungik Chang, PE, Professor &amp; Chair of Civil and Environmental Engineering · University of New Haven, 2026–present · applying AI tools to bridge inspection and the construction industry</span></div>
+    <div class="item"><b>Compressive and Tensile Strength of Green Concrete Hollow (GCH) Block System</b><span>MAHSA International Journal of Engineering and Technology, Vol. 4, Issue 2, 2024 · POFA, RHA, palm oil fibre and recycled concrete aggregate in interlocking hollow blocks</span></div>
+    <div class="item"><b>Compressive Strength of Green Concrete Brick with Variation Percentage of Agricultural and Plastic Waste</b><span>MAHSA e‑Journal, 2024 · supervisor Mohamad Zulhairi Mohd Boro</span></div>
+    <div class="item"><b>Development of GCH Block System Utilizing Agricultural and Construction Waste</b><span>Presented at Mi‑SITE 2024, 21–22 June 2024 · Best Presenter Award</span></div>
+  </div>
+  <div class="gallery rv" style="margin-top:28px">
+    <figure class="ph"><img class="fg" src="img/x-gold.jpg" alt="Afan receiving the Gold Award on stage at ESTE 2025"><figcaption>Gold Award, Degree Category — ESTE’25, for the green concrete brick thesis</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/x-poster.jpg" alt="Afan explaining his research poster to judges"><figcaption>Presenting the green concrete brick research poster to the judges</figcaption></figure>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="sec-head rv"><div><span class="eyebrow">Leadership</span><h2>Professional community</h2></div><a class="link" href="#beyond" style="font-family:var(--display);font-size:14px;font-weight:600">More beyond engineering →</a></div>
+  <div class="mosaic rv">
+    <figure class="ph"><img class="fg" src="img/x-aiac.jpg" alt="Afan speaking at a podium at the Asian International Arbitration Centre"><figcaption>Speaking at the Asian International Arbitration Centre (AIAC), Kuala Lumpur</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/x-cabe.jpg" alt="Afan with CABE leaders at the Malaysia International Conference 2023"><figcaption>CABE Malaysia International Conference 2023 — “Embedding Sustainability”</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/x-nybuild.jpg" alt="Afan seated on Stage 4 at NY Build Expo 2026"><figcaption>NY Build Expo 2026, Javits Center — Stage 4</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/x-portrait.jpg" alt="Afan in a vest and tie on a wooden staircase"><figcaption>Professional portrait</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-board.jpg" alt="SEI Graduate Student Chapter 2026–27 executive board graphic"><figcaption>SEI Grad Chapter executive board 2026–27 — President</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-cmaa-chang.jpg" alt="Afan with Dr. Byungik Chang and Bhupesh Chand at the CMAA dinner"><figcaption>CMAA Connecticut dinner with Dr. Chang and the outgoing SEI president</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-podium.jpg" alt="Afan presenting the SEI activities slide at the first chapter meeting"><figcaption>Opening the first chapter meeting of the year</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-fair1.jpg" alt="Afan talking to a student at the SEI table at the Fall Involvement Fair"><figcaption>Recruiting at the Fall Involvement Fair</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-cmaa-panel.jpg" alt="CMAA Connecticut panel of five industry leaders"><figcaption>CMAA CT "Looking Down the Road" — DOT and consultant panel</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-team.jpg" alt="Seven SEI chapter members in a classroom"><figcaption>SEI chapter members after the first meeting</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-tcoe.jpg" alt="Six SEI members with the TCoE Club Challenge certificate"><figcaption>TCoE Club Day &amp; Challenge — certificate of participation</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-cmaa-dilip.jpg" alt="Afan with Dilip Mundkur of BES Inc."><figcaption>With Dilip Mundkur, PE, PTOE — BES Inc. table host at CMAA CT</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-fe.jpg" alt="Students following an FE review lecture on screen"><figcaption>Weekly FE exam prep session</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-bridge-model.jpg" alt="Afan and Bhupesh beside the SEI cable-stayed bridge model"><figcaption>SEI cable‑stayed bridge model at the department showcase</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-tower.jpg" alt="SEI team with Dr. Chang at the tower challenge in the gym"><figcaption>Tower challenge, TCoE Club Day — with Dr. Chang</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-cmaa-four.jpg" alt="Afan with Purva Jadhav, Christopher LoNero and Bhupesh Chand"><figcaption>CMAA CT — with Tectonic, CTDOT and Baker colleagues</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-fair2.jpg" alt="Afan explaining the SEI chapter to a visitor at the fair table"><figcaption>Fall Involvement Fair — SEI table</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-cmaa-suit.jpg" alt="Afan in a suit in the lobby at the CMAA dinner"><figcaption>CMAA Connecticut dinner, Portland CT · Sep 2026</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/l-cmaa-room.jpg" alt="Full ballroom at the CMAA Connecticut dinner"><figcaption>CMAA CT — 200+ owners, consultants and contractors in the room</figcaption></figure>
+  </div>
+  <div class="lead-grid">
+    <div class="lead-card rv"><div class="eyebrow">2026 – 2027</div><b>President, SEI Graduate Student Chapter</b><p>University of New Haven. Lead a 5‑member executive board and the chapter's annual programme, budget and industry outreach: weekly FE exam prep, speaker seminars, resume review nights and construction site visits with local firms.</p></div>
+    <div class="lead-card rv d1"><div class="eyebrow">Industry</div><b>CMAA Connecticut · SEI‑CT · ASCE · ACI</b><p>Active at CMAA CT events, the SEI‑CT Structural Engineering Career Forum, NY Build Expo 2026 and the CSCE Younger Members workshop on international hiring.</p></div>
+    <div class="lead-card rv d2"><div class="eyebrow">Speaking</div><b>Debate &amp; public speaking</b><p>Yale Political Union debates; speaker at the CABE "Embedding Sustainability" conference; Pakistan Conference at Harvard; Commonwealth Student Governance Summit 2024.</p></div>
+  </div>
+</section>
+</div>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div class="cols">
+    <div class="rv">
+      <img class="avatar" src="img/headshot.jpg" alt="Muhammad Afan Tahir headshot">
+      <span class="eyebrow">Contact</span>
+      <h2 style="margin-top:10px">Let's talk about May 2027</h2>
+      <p style="max-width:52ch;margin-top:16px;color:var(--onsteel-2)">Available for full‑time roles from <b style="color:var(--onsteel)">May 2027</b> (M.S. expected May 2027): inspection, field engineering, project engineering or construction management roles with DOTs, consultants and contractors. Based in West Haven, CT, with a driver's license and own vehicle. Open to relocation and field travel.</p>
+      <div class="ctas"><a class="btn primary" href="https://www.linkedin.com/in/afantahir" target="_blank" rel="noopener">Message on LinkedIn</a><a class="btn ghost resume-open" href="resume.pdf" target="_blank" rel="noopener">Resume</a></div>
+    </div>
+    <div class="list rv d1">
+      <div class="item"><b>Email</b><span class="mono" style="font-size:15px">afantahir.work@gmail.com<button class="copy" data-copy="afantahir.work@gmail.com">copy</button></span></div>
+      <div class="item"><b>Phone</b><span class="mono" style="font-size:15px">203‑410‑7152<button class="copy" data-copy="203-410-7152">copy</button></span></div>
+      <div class="item"><b>LinkedIn</b><span class="mono" style="font-size:15px">linkedin.com/in/afantahir</span></div>
+      <div class="bizcard"><span class="eyebrow">Business card · tap to flip</span>
+        <button class="flip" id="flip" aria-label="Flip business card"><span class="fc"><img class="ff" src="img/card-front.jpg" alt="Business card front: Muhammad Afan Tahir, Civil Engineer"><img class="fb" src="img/card-back.jpg" alt="Business card back: QR codes for portfolio, LinkedIn and resume"></span></button>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<div class="wrap"><footer><span>© 2026 Muhammad Afan Tahir</span><span>Updated Oct 2026</span></footer></div>
+</main>
+
+<!-- ===== PROJECT PAGES ===== -->
+<article class="page" id="ampang">
+  <div class="hd"><div class="wrap"><a class="back" href="#projects">← All projects</a><div class="eyebrow">03 · Condition assessment · Kuala Lumpur, Malaysia</div><h2>Jalan Ampang pedestrian bridge</h2></div></div>
+  <div class="bd"><div class="wrap">
+  <div class="facts">
+    <div class="fact"><span>Role</span><b>Project Engineer (part‑time)</b></div>
+    <div class="fact"><span>Supervisor</span><b>Ir. Parnam Singh, SHRA</b></div>
+    <div class="fact"><span>Period</span><b>May 2024 – Feb 2025</b></div>
+    <div class="fact"><span>Structure</span><b>Pedestrian overbridge</b></div>
+  </div>
+  <div class="gallery">
+    <figure class="ph"><img class="fg" src="img/site-ampang-bridge.jpg" alt="The pedestrian bridge with covered stair towers on both sides of Jalan Ampang"><figcaption>Covered steel stair towers and deck over six lanes of Jalan Ampang</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/site-ampang-survey.jpg" alt="Afan with a hand-drawn side-view sketch of the bridge and a tape measure"><figcaption>Side‑view sketch and dimensional survey at the stair pier</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/site-laser.jpg" alt="Laser measure reading 0.165 m against a painted steel member"><figcaption>Laser measurement of a member, 0.165 m, for the as‑built drawings</figcaption></figure>
+  </div>
+  <div class="prose">
+    <p>A structural forensic investigation of an in‑service pedestrian bridge over Jalan Ampang, one of Kuala Lumpur's busiest roads, carried out with Structural Healthcare Research Associates. The job was to establish the bridge's current condition and recommend remedial works.</p>
+    <h3>What I did</h3>
+    <ul>
+      <li>On‑site dimensional survey of the deck, girders, columns and stairs; produced as‑built AutoCAD drawings where none existed.</li>
+      <li>Visual inspection and defect mapping: cracks, spalling, corrosion staining, section loss and drainage issues, each photographed and located on the drawings.</li>
+      <li>Coordinated materials testing and compiled results into the condition appraisal.</li>
+      <li>Drafted the remedial works plan and priorities using the Identify → Classify → Verify → Quantify → Rectify method.</li>
+    </ul>
+    <div class="callout">The same workflow — survey, map, classify, prioritise, then plan the fix — is what inspection teams and project engineers do on every rehabilitation job.</div>
+  </div>
+  </div></div>
+</article>
+
+<article class="page" id="bridge03017">
+  <div class="hd"><div class="wrap"><a class="back" href="#projects">← All projects</a><div class="eyebrow">01 · Supervised academic bridge inspection · New Haven, Connecticut</div><h2>Bridge 03017 inspection report</h2></div></div>
+  <div class="bd"><div class="wrap">
+  <div class="facts">
+    <div class="fact"><span>Role</span><b>Assistant Team Leader</b></div>
+    <div class="fact"><span>Course lead</span><b>Dr. Byungik Chang, PE</b></div>
+    <div class="fact"><span>Period</span><b>Oct – Dec 2025</b></div>
+    <div class="fact"><span>Tools</span><b>Bluebeam Revu · field forms</b></div>
+  </div>
+  <div class="gallery">
+    <figure class="ph"><img class="fg" src="img/b17-willow.jpg" alt="Inspection team in hard hats and vests at the Willow Street intersection"><figcaption>Field day, Nov 2025: team heading to Bridge 03017 on Willow Street</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/b17-under.jpg" alt="Team walking along the abutment beneath the steel girders"><figcaption>Walking the abutment beneath the girders</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/b17-abutwall.jpg" alt="Three inspectors examining patched areas on the abutment wall"><figcaption>Examining patches, staining and efflorescence on the abutment face</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/site-b17-review.jpg" alt="Three inspectors in PPE reviewing the inspection forms beside the roadway"><figcaption>Checking the previous CTDOT report against what we found</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/hero-b17.jpg" alt="Afan with flashlight at the abutment under the bridge"><figcaption>Abutment walk‑down with flashlight, checking stems and backwall</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/b17-sketchread.jpg" alt="Team member reading the Bridge 03017 sketch sheet on site"><figcaption>Marking findings on the CTDOT sketch sheets in the field</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/b17-abut.jpg" alt="Plan and elevation sketch of Abutment 1 with defects marked in red and blue"><figcaption>Abutment 1 sketch: cracks, hollow area and patch located by girder line</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/b17-wingwall.jpg" alt="Wingwall 1A and 1B elevation sketch with efflorescence marked"><figcaption>Wingwalls 1A and 1B: efflorescence, scaling and missing joint filler mapped</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/b17-revu.jpg" alt="Bluebeam Revu screen showing the Bridge 03017 plan sketch with dimensions"><figcaption>Bridge 03017 (I‑91 NB over Willow St) sketch opened in Bluebeam Revu</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/b17-revu03018.jpg" alt="Bluebeam Revu screen showing the Bridge 03018 sketch with lane widths and clearances"><figcaption>Adjacent Bridge 03018 (I‑91 SB &amp; Ramp C over Willow St) sketch in Bluebeam Revu</figcaption></figure>
+  </div>
+  <div class="prose">
+    <p>A supervised academic inspection of a real Connecticut bridge under Dr. Byungik Chang, PE: review of the previous CTDOT report and sketches, a field visit in PPE, then defect mark‑ups, condition ratings and a written report to FHWA NBIS and CTDOT standards.</p>
+    <h3>What I did</h3>
+    <ul>
+      <li>Inspected the bridge with the team: reviewed prior CTDOT records, walked the abutments and superstructure, logged defects with photos.</li>
+      <li>Produced the plan and elevation sketches in Bluebeam Revu and located observed defects on them. On Abutment 1: a 1.5‑ft crack between G5 and G6, a 3‑ft crack between G1 and G2, a hollow area 5 ft above the base, a previous patch between G4 and G5, hairline map cracking, silt staining from past joint leakage and efflorescence on the backwall. On Wingwall 1A: a 2.5‑ft efflorescence line 7′5″ above the base, 3.5‑ft vertical efflorescence at the bottom of the cheekwall and 4‑ft efflorescence along the construction joint, with light scaling and missing joint filler.</li>
+      <li>Compiled the final report with condition ratings and repair recommendations to FHWA NBIS and CTDOT standards.</li>
+    </ul>
+    <h3>Training behind it</h3>
+    <ul>
+      <li>FHWA‑NHI 130101/A, 130128 and 130087A completed before and during the course.</li>
+    </ul>
+  </div>
+  </div></div>
+</article>
+
+<article class="page" id="pavilion">
+  <div class="hd"><div class="wrap"><a class="back" href="#projects">← All projects</a><div class="eyebrow">02 · Concrete repair supervision · RNC Concrete Repair Specialist</div><h2>Pavilion Mall Bukit Bintang &amp; D'Inspire Residence</h2></div></div>
+  <div class="bd"><div class="wrap">
+  <div class="facts">
+    <div class="fact"><span>Role</span><b>Assistant Project Engineer Intern</b></div>
+    <div class="fact"><span>Period</span><b>Aug 2023 – Apr 2024</b></div>
+    <div class="fact"><span>Scope</span><b>Crack rectification · stabilisation · waterproofing</b></div>
+    <div class="fact"><span>Result</span><b>All RFI reports accepted</b></div>
+  </div>
+  <div class="gallery">
+    <figure class="ph"><img class="fg" src="img/site-pavilion-ops.jpg" alt="Afan with a Pavilion operations officer holding the inspection binder"><figcaption>With Pavilion Operations Support Services, inspection file in hand</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/pv-zone-b2.jpg" alt="Pavilion Basement 2 zoning plan in the project file"><figcaption>Basement 2 zoning plan — work packages set out by zone</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/pv-zone-1m.jpg" alt="Pavilion Level 1M zoning plan"><figcaption>Level 1M zoning: zones A–G used to track every defect</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/pv-hacking.jpg" alt="Afan supervising concrete hacking at the repair area"><figcaption>Supervising hacking of defective concrete before repair</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p3-wall.jpg" alt="Pavilion operations staff checking a repaired wall"><figcaption>Joint walk with Pavilion Operations — checking a repaired wall</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/pv-epoxy.jpg" alt="Worker in PPE measuring epoxy resin for crack injection"><figcaption>Mixing injection resin to the specified ratio</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/site-injection.jpg" alt="Two workers in PPE injecting epoxy into a floor crack"><figcaption>Crew sealing and injecting a slab crack</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p3-crack1.jpg" alt="Floor crack tagged CR.001"><figcaption>Crack tagged and numbered before repair (CR.001)</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p3-crack2.jpg" alt="Wall crack tagged No. 17, 1.5 m, M8"><figcaption>Wall crack No. 17 — 1.5 m, method M8</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p3-consult.jpg" alt="Consultant checking the defect log against the repaired wall"><figcaption>Consultant verifying before/after records on site</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p3-binder.jpg" alt="RNC defect log with before and after photos"><figcaption>RNC defect log: before/after photos, mapped vs. actual quantities</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p3-excel.jpg" alt="Excel defect register for level B2"><figcaption>Defect register, Level B2 — mapped vs. actual quantity per defect</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/pv-boq.jpg" alt="Bill of Quantities document on a laptop"><figcaption>Bill of Quantities for the repair claim</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/pv-meeting.jpg" alt="Project meeting with drawings projected and the programme on the table"><figcaption>Progress meeting with the consultant team</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p3-plan.jpg" alt="Field form beside a laptop with marked-up drawings"><figcaption>Field form and marked‑up drawing at the site office</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/hero-dinspire.jpg" alt="Afan in a white hard hat on the D'Inspire car-park repair site"><figcaption>D'Inspire Residence car‑park — supervising crack rectification</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/pv-dinspire-plan.jpg" alt="D'Inspire Residence car park layout with repair zones marked"><figcaption>D'Inspire car‑park plan with repair zones 1–8 marked</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/site-dinspire-tower.jpg" alt="D'Inspire Residence tower, Nusa Bestari, Johor"><figcaption>D'Inspire Residence, Nusa Bestari, Johor</figcaption></figure>
+  </div>
+  <div class="prose">
+    <p><b>Pavilion Kuala Lumpur</b> is a live, fully occupied shopping mall. I supervised structural and non‑structural crack repair for the mall's consultant across several basement and ground levels.</p>
+    <ul>
+      <li>Reviewed specifications and AutoCAD drawings before each work package; marked up crack locations and repair methods on the level plans.</li>
+      <li>Ran daily safety and quality inspections of the repair crews; kept the RFI and inspection records that the consultant signed off at the monthly claim.</li>
+      <li>Coordinated between client, consultant and crews so issues were raised and closed the same day.</li>
+    </ul>
+    <p><b>D'Inspire Residence, Nusa Bestari, Johor</b> — rectification of cracks and structural stabilisation of a high‑rise car‑park structure: every crack tagged, numbered and measured (e.g. No. 17, 1.5 m, method M8), logged in a before/after register and closed out with the consultant. <b>Tevolli Villas, Bangsar</b> — site inspection for waterproofing and concrete repair.</p>
+    <div class="callout">Lesson I carried into inspection work: read the drawings first, inspect every day, and write it down the same day. Records that are complete are records that get paid.</div>
+  </div>
+  </div></div>
+</article>
+
+<article class="page" id="capstone">
+  <div class="hd"><div class="wrap"><a class="back" href="#projects">← All projects</a><div class="eyebrow">04 · Capstone design · MAHSA University · Feb 2025</div><h2>BUILDXPERT — 3‑storey school building</h2></div></div>
+  <div class="bd"><div class="wrap">
+  <div class="facts">
+    <div class="fact"><span>Team</span><b>Chee Jun Ye · Sew Yu Quan · Afan Tahir</b></div>
+    <div class="fact"><span>Codes</span><b>Eurocode 2 &amp; 3</b></div>
+    <div class="fact"><span>Software</span><b>Tekla SD · Revit · MS Project</b></div>
+    <div class="fact"><span>Estimate</span><b>~RM 40 million</b></div>
+  </div>
+  <div class="gallery">
+    <figure class="ph"><img class="fg" src="img/p4-tekla.jpg" alt="Tekla Structural Designer 3D model of the school"><figcaption>3‑storey U‑plan school in Tekla Structural Designer</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p4-check.jpg" alt="Tekla design status view with members coloured pass, warning and fail"><figcaption>Design check run: 821 pass, 457 warning, 229 fail — then iterated</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p4-cad.jpg" alt="AutoCAD first-floor plan"><figcaption>Architectural first‑floor plan reviewed and amended in AutoCAD</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p4-drawings.jpg" alt="Printed structural drawing sheets and the MS Project schedule"><figcaption>Column, pile cap and stump drawings with the MS Project programme</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p4-report.jpg" alt="Hardbound black capstone report, MAHSA University, February 2025"><figcaption>The bound report, February 2025</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p4-present.jpg" alt="Afan presenting the capstone in front of the slides"><figcaption>Final presentation to the panel</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/p4-team.jpg" alt="The three students with lecturers after the capstone defence"><figcaption>BUILDXPERT team with the lecturers after the defence</figcaption></figure>
+  </div>
+  <div class="prose">
+    <ul>
+      <li>Architectural review and amendments in AutoCAD, then full structural design: manual Eurocode calculations for slabs, beams, columns and foundations, checked against Tekla Structural Designer output. Design-check runs were iterated until every member passed.</li>
+      <li>Soil investigation interpretation (borehole logs, SPT) for foundation design.</li>
+      <li>Revit model, structural drawing set, BOQ and cost estimate, WBS and MS Project schedule.</li>
+    </ul>
+  </div>
+  </div></div>
+</article>
+
+<article class="page" id="infra">
+  <div class="hd"><div class="wrap"><a class="back" href="#projects">← All projects</a><div class="eyebrow">05 · Infrastructure design · MAHSA University · Mar – Aug 2024</div><h2>Bandar Sujana Putra SP2 infrastructure design</h2></div></div>
+  <div class="bd"><div class="wrap">
+  <div class="facts">
+    <div class="fact"><span>Site</span><b>Bandar Sujana Putra SP2, Selangor</b></div>
+    <div class="fact"><span>Scope</span><b>Earthworks · roads · drainage</b></div>
+    <div class="fact"><span>Period</span><b>Mar – Aug 2024</b></div>
+    <div class="fact"><span>Team</span><b>Afan Tahir · Yen Kai</b></div>
+  </div>
+  <div class="gallery">
+    <figure class="ph"><img class="fg" src="img/in-profile.jpg" alt="Water elevation profile from node M-1 to outfall O-1"><figcaption>Water elevation profile, M‑1 to outfall O‑1, across six manholes</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/in-manholes.jpg" alt="Report pages showing manholes, sewer lines and conduit cross-section"><figcaption>Manhole and sewer line layout with conduit cross‑sections from the report</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/in-report.jpg" alt="Afan in a suit holding the bound infrastructure design report"><figcaption>The bound design report</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/in-risk.jpg" alt="Afan presenting a colour-coded risk assessment matrix"><figcaption>Presenting the risk assessment matrix: low to very high</figcaption></figure>
+    <figure class="ph"><img class="fg" src="img/in-present.jpg" alt="Afan presenting to the panel"><figcaption>Final presentation to the panel</figcaption></figure>
+  </div>
+  <div class="prose">
+    <p>An undergraduate infrastructure design for the Bandar Sujana Putra SP2 development in Selangor, Malaysia: taking a raw site through to a planned road network and a working stormwater system.</p>
+    <h3>What I did</h3>
+    <ul>
+      <li>Earthworks planning for the site, setting levels for roads and plots.</li>
+      <li>Road layout for the development's internal network.</li>
+      <li>Stormwater drainage design: manhole and conduit network modelled in drainage software, with the water elevation profile checked from M‑1 to the outfall O‑1.</li>
+      <li>Risk assessment for the works, rated low to very high, and the final report and presentation.</li>
+    </ul>
+  </div>
+  </div></div>
+</article>
+
+<article class="page" id="beyond">
+  <div class="hd"><div class="wrap"><a class="back" href="#leadership">← Back</a><div class="eyebrow">Beyond engineering</div><h2>Speaking, leadership and service</h2></div></div>
+  <div class="bd"><div class="wrap">
+  <div class="prose">
+    <ul>
+      <li><b>Yale Political Union</b> — regular debates and public speaking; met former U.S. Secretary of Education Miguel Cardona (2025–26).</li>
+      <li><b>Pakistan Conference at Harvard</b> (Apr 2026) — met diplomats and senior officials; Harvard Business School.</li>
+      <li><b>Commonwealth Student Governance Summit 2024</b> — youth leadership delegate.</li>
+      <li><b>CABE conference, "Embedding Sustainability in Construction"</b> — speaker, MAHSA University.</li>
+      <li><b>UN CC:Learn / UNU‑IAS</b> — Net Zero 101 certificate, Nov 2025.</li>
+      <li><b>Community</b> — IEM Club visit to PAYSA Orphanage (2024); Gotong Royong campus clean‑up; organised the IEM tower competition and the IWK sewage treatment plant site visit as student leader.</li>
+      <li><b>Languages</b> — English, Urdu, Punjabi; working Malay.</li>
+    </ul>
+  </div>
+  </div></div>
+</article>
+
+<img id="resumeimg" src="img/resume.jpg" alt="" style="display:none">
+<div class="lb" id="lb" role="dialog" aria-label="Photo viewer">
+  <button class="x" id="lbx" aria-label="Close">×</button>
+  <button class="p" id="lbp" aria-label="Previous">‹</button>
+  <button class="n" id="lbn" aria-label="Next">›</button>
+  <img id="lbimg" alt="">
+  <div class="lcap" id="lbcap"></div>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+/* always open at the top (no restored scroll, no jump to a #section) */
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+(function(){const h=location.hash.slice(1);const isPage=h&&document.getElementById(h)&&document.getElementById(h).classList.contains('page');
+  if(h&&!isPage)history.replaceState(null,'',location.pathname+location.search);
+  const top=()=>{if(!isPage)scrollTo({top:0,behavior:'instant'})};top();addEventListener('DOMContentLoaded',top);addEventListener('load',()=>{top();setTimeout(top,60);setTimeout(top,300)});addEventListener('pageshow',top);})();
+document.querySelectorAll('.ph').forEach(f=>{const b=f.querySelector('.bg'),g=f.querySelector('.fg');if(b&&g&&!b.getAttribute('src'))b.src=g.getAttribute('src')});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+/* scroll progress */
+const prog=$('#prog');
+addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05,rootMargin:'0px 0px -4% 0px'});
+$$('.rv').forEach(el=>io.observe(el));
+setTimeout(()=>$$('.rv:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('in')}),2500);
+
+/* counters */
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.to,dec=+(el.dataset.dec||0);co.unobserve(el);
+  if(reduce){el.textContent=to.toFixed(dec);return}
+  const t0=performance.now(),d=1200;(function f(t){const p=Math.min(1,(t-t0)/d),ease=1-Math.pow(1-p,3);el.textContent=(to*ease).toFixed(dec);if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.5});
+$$('.count').forEach(el=>co.observe(el));
+
+/* hero slideshow (auto crossfade; never scrolls the page) */
+(function(){const box=$('#slides');if(!box)return;const imgs=$$('img',box),cap=$('#slidecap'),dots=$('#dots');let i=0,t;
+  imgs.forEach((_,k)=>{const b=document.createElement('button');b.setAttribute('aria-label','Photo '+(k+1));b.addEventListener('click',e=>{e.stopPropagation();show(k);restart()});dots.appendChild(b)});
+  function show(k){i=k;imgs.forEach((im,j)=>im.classList.toggle('on',j===k));$$('button',dots).forEach((b,j)=>b.classList.toggle('on',j===k));cap.textContent=imgs[k].dataset.cap}
+  function restart(){clearInterval(t);if(!reduce)t=setInterval(()=>show((i+1)%imgs.length),6000)}
+  show(0);restart();
+})();
+
+/* on-site carousel (manual: arrows, thumbnails, swipe) */
+(function(){const track=$('#track');if(!track)return;const slides=$$('.slide',track),thumbs=$('#thumbs');let i=0;
+  slides.forEach((s,k)=>{const b=document.createElement('button');b.innerHTML='<img src="'+$('.fg',s).getAttribute('src')+'" alt="">';b.setAttribute('aria-label','Photo '+(k+1));b.addEventListener('click',()=>go(k));thumbs.appendChild(b)});
+  function go(k){i=(k+slides.length)%slides.length;track.style.transform='translateX(-'+i*100+'%)';$$('button',thumbs).forEach((b,j)=>b.classList.toggle('on',j===i))}
+  $('#prev').addEventListener('click',()=>go(i-1));$('#next').addEventListener('click',()=>go(i+1));
+  let x0=null;track.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});track.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
+  go(0);
+})();
+
+/* credential tabs */
+(function(){const tabs=$$('.ctab');tabs.forEach((t,k)=>{t.addEventListener('click',()=>sel(k));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();sel((k+1)%tabs.length,true)}if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();sel((k-1+tabs.length)%tabs.length,true)}})});
+  function sel(k,f){tabs.forEach((t,j)=>{const on=j===k;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!on});if(f)tabs[k].focus()}
+  sel(0);
+})();
+
+/* lightbox */
+(function(){const lb=$('#lb'),img=$('#lbimg'),cap=$('#lbcap');let list=[],i=0;
+  function open(items,k){list=items;i=k;render();lb.classList.add('open');document.body.style.overflow='hidden'}
+  function render(){const it=list[i];img.src=it.src;img.alt=it.alt;cap.textContent=it.cap;$('#lbp').style.display=$('#lbn').style.display=list.length<2?'none':''}
+  function close(){lb.classList.remove('open','doc');document.body.style.overflow=''}
+  $$('.resume-open').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();lb.classList.add('doc');open([{src:$('#resumeimg').getAttribute('src'),alt:'Resume of Muhammad Afan Tahir',cap:'Resume · Oct 2026'}],0)}));
+  $('#lbx').addEventListener('click',close);lb.addEventListener('click',e=>{if(e.target===lb)close()});
+  $('#lbp').addEventListener('click',()=>{i=(i-1+list.length)%list.length;render()});$('#lbn').addEventListener('click',()=>{i=(i+1)%list.length;render()});
+  addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')$('#lbp').click();if(e.key==='ArrowRight')$('#lbn').click()});
+  $$('.gallery, .mosaic, #track').forEach(group=>{const figs=$$('.ph',group);const items=figs.map(f=>({src:$('.fg',f).getAttribute('src'),alt:$('.fg',f).alt,cap:($('figcaption',f)||{}).textContent||''}));figs.forEach((f,k)=>f.addEventListener('click',()=>open(items,k)))});
+  $$('#education .ph').forEach((f,k,all)=>f.addEventListener('click',()=>open(all.map(g=>({src:$('.fg',g).getAttribute('src'),alt:$('.fg',g).alt,cap:$('figcaption',g).textContent})),k)));
+  const hero=$('#slides');if(hero){hero.style.cursor='zoom-in';hero.addEventListener('click',()=>{const imgs=$$('img',hero);const items=imgs.map(im=>({src:im.getAttribute('src'),alt:im.alt,cap:im.dataset.cap}));open(items,imgs.findIndex(im=>im.classList.contains('on')))})}
+})();
+
+/* timeline draw */
+const tl=$('#tl');
+if(tl){const draw=()=>{const r=tl.getBoundingClientRect();const p=Math.max(0,Math.min(1,(innerHeight*.75-r.top)/r.height));tl.style.setProperty('--draw',(p*100).toFixed(1)+'%')};addEventListener('scroll',draw,{passive:true});draw()}
+
+/* nav tint after hero */
+const nav=$('#nav'),hero=$('#top');
+new IntersectionObserver(es=>nav.classList.toggle('light',!es[0].isIntersecting),{rootMargin:'-60px 0px 0px 0px'}).observe(hero);
+
+/* copy buttons */
+$$('.copy').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.copy;const done=()=>{b.textContent='copied';setTimeout(()=>b.textContent='copy',1500)};
+  navigator.clipboard?.writeText(v).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(b.parentElement);getSelection().removeAllRanges();getSelection().addRange(r)})}));
+
+/* business card flip */
+$('#flip')?.addEventListener('click',e=>e.currentTarget.classList.toggle('on'));
+
+/* project pages open at top */
+addEventListener('hashchange',()=>{if($('.page:target'))scrollTo({top:0,behavior:'instant'});else $$('.rv').forEach(el=>el.classList.add('in'))});
+</script>
+
+</body>
+</html>
